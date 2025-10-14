@@ -354,9 +354,10 @@
 
 /* ==== Split Slide  ==== */
 .split-box {
-    height: 100vh;
+    height: 90vh;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 100px;
     position: sticky;
     top: 0;
 }
@@ -365,7 +366,6 @@
     height: 100%;
     width: 100%;
     -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
     display: flex;
     display: -ms-flexbox;
     -ms-flex-direction: column;
@@ -1512,7 +1512,7 @@ content: "";
 	color:#fff !important; 
 }
 .link-line:hover:after{
-	background:#000;
+	background: #252525;
 	width:100%;
 	left:0;
 	right:auto;
