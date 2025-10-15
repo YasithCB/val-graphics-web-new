@@ -264,8 +264,8 @@
     z-index: 1;
     overflow: hidden;
     font-family: 'DIN Condensed Bold';
-    font-size: 250px;
-    line-height: 220px;
+    font-size: 150px;
+    line-height: 150px;
     font-weight: 600;
 	margin-bottom: 0;
     font-weight: 900;
@@ -549,8 +549,8 @@
 	font-family: unset;
 }
 .dlab-bnr-inr.no-bg-bnr .dlab-bnr-inr-entry h1{
-	font-size: 9vw;
-	line-height: 9vw;
+	font-size: 5vw;
+	line-height: 5vw;
 	margin-bottom: 15px;
 	text-transform: uppercase;
 }
@@ -1601,8 +1601,8 @@ content: "";
 	    padding-top: 50px;	
 	}
 	.page-banner .intro-title{
-		font-size: 170px;
-		line-height: 145px;
+		font-size: 130px;
+		line-height: 130px;
 	}
 	.page-banner .video-box .content-box .title{
 		margin-bottom: 15px;
@@ -1902,8 +1902,8 @@ content: "";
 		padding-bottom: 20px;
 	}
 	.page-banner .intro-title {
-		font-size: 150px;
-		line-height: 140px;
+		font-size: 110px;
+		line-height: 110px;
 	}
 	.site-header.header-black .navicon span{
 		background-color: #000;
@@ -2023,8 +2023,8 @@ content: "";
 	    line-height: 25px;	
 	}
 	.page-banner .intro-title {
-		font-size: 120px;
-		line-height: 110px;
+		font-size: 80px;
+		line-height: 80px;
 	}
 	.client-logo-list li {
 		max-width: calc(33.33% - 1px);
@@ -2144,8 +2144,8 @@ content: "";
 		margin-top: 20px;
 	}
 	.page-banner .intro-title {
-		font-size: 75px;
-		line-height: 80px;
+		font-size: 50px;
+		line-height: 50px;
 	}
 	.page-banner .showreel{
 		display: none;
