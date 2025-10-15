@@ -50,8 +50,23 @@
             <div class="main-bar clearfix bg-white">
                 <div class="container clearfix">
                     <!-- website logo -->
-                    <img src="images/logo-horiz.png" alt="logo-icon" style="height: 65px;">
-                    <!-- extra nav -->
+                    <a href="index.html">
+                        <img src="images/logo-text-black.png" alt="logo-icon" style="height: 60px;">
+                    </a>
+
+                    <!-- main nav -->
+                    <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="index.html">Home </a>
+                            </li>
+                            <li><a href="services.html">Services</a>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contacts</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Enquiry Now -->
                     <div class="extra-nav">
                         <div class="extra-cell">
                             <div class="video-wraper">
@@ -71,60 +86,23 @@
                             </div>
                         </div>
                     </div>
-                    <!-- nav toggle button -->
-                    <button class="navbar-toggler collapsed navicon justify-content-end" type="button"
-                            data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <!-- main nav -->
-                    <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
-                        <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href="index.html">Home </a>
-                            </li>
-                            <li><a href="about.html">About</a></li>
-                            <li>
-                                <a href="javascript:void(0);">Services <i class="fa fa-chevron-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="services-details.html">services Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="javascript:void(0);">Works <i class="fa fa-chevron-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li><a href="work.html">Works</a></li>
-                                    <li><a href="work-details.html">Work Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contacts</a></li>
-                            <li><a href="javascript:void(0);">Blog <i class="fa fa-chevron-down"></i></a>
-                                <ul class="sub-menu left">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
         <!-- main header END -->
     </header>
-    <!-- header END -->
+    <!-- header -->
 
     <!-- Content -->
     <div class="page-content bg-white">
         <!-- inner page banner -->
-        <div class="dlab-bnr-inr no-bg-bnr">
+        <div class="dlab-bnr-inr no-bg-bnr bg-black">
             <div class="container">
                 <div class="row align-items-center">
                     <!-- Left Column: Text -->
                     <div class="col-lg-6 col-md-12">
-                        <div class="dlab-bnr-inr-entry text-black text-left">
-                            <h1 class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+                        <div class="dlab-bnr-inr-entry text-left">
+                            <h1 class="wow fadeInUp text-white" data-wow-delay="0.5s" data-wow-duration="1s">
                                 <span class="text-red">DIGITAL</span> SOLUTIONS
                             </h1>
                             <p class="wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="1s">
@@ -434,6 +412,85 @@
         </div>
     </footer>
     <!-- Footer END -->
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/971XXXXXXXXX" target="_blank" class="whatsapp-btn">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <img src="images/icon/whatsApp.webp" alt="WhatsApp" />
+    </a>
+
+    <!-- CSS -->
+    <style>
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-btn img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Rings */
+        .whatsapp-btn .ring {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #25D366;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .whatsapp-btn .ring:nth-child(2) {
+            animation-delay: 1s; /* stagger second ring */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Pulse animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.8);
+                opacity: 0.1;
+            }
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+    </style>
 
     <button class="scroltop icon-up" type="button"><i class="fa fa-arrow-up"></i></button>
 </div>
