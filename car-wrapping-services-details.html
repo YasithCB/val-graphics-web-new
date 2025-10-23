@@ -36,6 +36,7 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/my-style.css">
     <link rel="stylesheet" type="text/css" href="css/templete.css">
     <link class="skin" rel="stylesheet" type="text/css" href="css/skin/skin-1.css">
 </head>
@@ -50,8 +51,8 @@
             <div class="main-bar clearfix bg-white">
                 <div class="container clearfix">
                     <!-- website logo -->
-                    <a href="index.html">
-                        <img src="images/logo-text-black.png" alt="logo-icon" style="height: 60px;">
+                    <a href="index.html" class="logo-container">
+                        <img src="images/logo-text-black.png" alt="logo-icon" class="logo-img">
                     </a>
 
                     <!-- main nav -->
@@ -71,7 +72,7 @@
                         <div class="extra-cell">
                             <div class="video-wraper">
                                 <div class="video-play">
-                                    <a href="https://www.youtube.com/watch?v=UMX6eWoMXAM" class="popup-youtube video">
+                                    <a href="contact.html" class="popup-youtube video">
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -81,11 +82,22 @@
                                                 <path d="m21.854 2.147-10.94 10.939"/>
                                             </svg>
                                         </div>
-                                        <span>INQUIRE NOW!</span></a>
+                                        <span class="d-none d-md-block">INQUIRE NOW!</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Mobile navbar toggler button -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -102,8 +114,10 @@
                     <!-- Left Column: Text -->
                     <div class="col-lg-6 col-md-12">
                         <div class="dlab-bnr-inr-entry text-left">
-                            <h1 class="wow fadeInUp text-white" data-wow-delay="0.5s" data-wow-duration="1s"><span class="text-red">CAR</span> WRAPPING SERVICES</h1>
-                            <p class="wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="1s">Transform your vehicle with our
+                            <h1 class="wow fadeInUp text-white" data-wow-delay="0.5s" data-wow-duration="1s"><span
+                                    class="text-red">CAR</span> WRAPPING SERVICES</h1>
+                            <p class="wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="1s">Transform your vehicle
+                                with our
                                 professional wrapping solutions — from vibrant
                                 business branding to
                                 sleek color changes and full fleet wraps. We use top-quality vinyls for lasting
@@ -184,7 +198,7 @@
                 <div class="container">
                     <h3 class="title">EXPLORE CATEGORIES</h3>
                     <div class="row spno lightgallery">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-4 wow zoomIn" data-wow-delay="0.5s"
+                        <div class="col-lg-4 col-md-6 col-12 wow zoomIn" data-wow-delay="0.5s"
                              data-wow-duration="1s">
                             <div class="project-bx">
                                 <div class="media">
@@ -202,7 +216,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-4 wow zoomIn" data-wow-delay="0.5s"
+                        <div class="col-lg-4 col-md-6 col-12 wow zoomIn" data-wow-delay="0.5s"
                              data-wow-duration="1s">
                             <div class="project-bx">
                                 <div class="media">
@@ -221,7 +235,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-4 wow zoomIn" data-wow-delay="0.5s"
+                        <div class="col-lg-4 col-md-6 col-12 wow zoomIn" data-wow-delay="0.5s"
                              data-wow-duration="1s">
                             <div class="project-bx">
                                 <div class="media">
@@ -240,7 +254,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-4 wow zoomIn" data-wow-delay="0.5s"
+                        <div class="col-lg-4 col-md-6 col-12 wow zoomIn" data-wow-delay="0.5s"
                              data-wow-duration="1s">
                             <div class="project-bx">
                                 <div class="media">
@@ -259,7 +273,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-4 wow zoomIn" data-wow-delay="0.5s"
+                        <div class="col-lg-4 col-md-6 col-12 wow zoomIn" data-wow-delay="0.5s"
                              data-wow-duration="1s">
                             <div class="project-bx">
                                 <div class="media">
@@ -379,12 +393,12 @@
                         <div class="widget widget_about">
                             <h2 class="footer-title">HAVE ANY PROJECT<br/> OR SAY "HELLO" AT -
                                 <a href="#"> +971 50 2 30 31 30
-</a>
+                                </a>
                             </h2>
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <ul class="social-link">
+                        <ul class="social-link align-content-center">
                             <li><a href="javascript:void(0);"><span>FACEBOOK</span> <i class="fa fa-facebook"></i></a>
                             </li>
                             <li><a href="javascript:void(0);"><span>INSTAGRAM</span> <i class="fa fa-instagram"></i></a>
@@ -393,8 +407,11 @@
                             </li>
                             <li><a href="javascript:void(0);"><span>TWITTER</span> <i class="fa fa-twitter"></i></a>
                             </li>
-                            <li class="ml-auto"><a href="javascript:void(0);"><img src="images/icon/star.png" alt=""
-                                                                                   width="20"/> <span>CONTACT US</span></a>
+                            <li class="ml-auto">
+                                <a href="javascript:void(0);" class="d-flex">
+                                    <img src="images/icon/star.png" alt="" width="20"/>
+                                    <span class="contact-us">CONTACT US</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -422,7 +439,7 @@
     <a href="https://wa.me/971XXXXXXXXX" target="_blank" class="whatsapp-btn">
         <div class="ring"></div>
         <div class="ring"></div>
-        <img src="images/icon/whatsApp.webp" alt="WhatsApp" />
+        <img src="images/icon/whatsApp.webp" alt="WhatsApp"/>
     </a>
 
     <!-- CSS -->
@@ -438,7 +455,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -449,7 +466,7 @@
 
         .whatsapp-btn:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
         /* Rings */

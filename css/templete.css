@@ -352,7 +352,7 @@
     writing-mode: vertical-lr;
 }
 
-/* ==== Split Slide  ==== */
+/* ==== Split Slide (Desktop) ==== */
 .split-box {
     height: 90vh;
     margin-left: 0;
@@ -361,6 +361,14 @@
     position: sticky;
     top: 0;
 }
+/* ==== Mobile Adjustments ==== */
+@media (max-width: 768px) {
+    .split-box {
+        margin-bottom: 40px;  /* Reduce spacing */
+        top: auto;
+    }
+}
+
 .split-content {
     padding: 80px;
     height: 100%;
@@ -498,7 +506,8 @@
 .site-footer .social-link{
 	margin-bottom: 0;
 	margin-top: 50px;
-    display: flex;	
+    display: flex;
+    align-items: center;
 }
 .site-footer .social-link li{
 	display: inline-block;
@@ -1839,7 +1848,7 @@ content: "";
 		text-align: right;
 	}
 	.mo-left .header-nav {
-		background-color: var(--color-primary);
+		background-color: #ffffffcf;
 	}
 	.mo-left .header-nav .nav{
 		background-color: transparent;
@@ -1911,8 +1920,10 @@ content: "";
 		display: none;
 	}
 	.split-box-area .split-item .title {
-		font-size: 24px;
-	}
+        font-size: 20px;
+        line-height: 29px;
+        margin-bottom: 0;
+    }
 	.fixed-body{
 		overflow:hidden;
 	}
@@ -2021,6 +2032,10 @@ content: "";
 		font-size: 25px;
 	    line-height: 25px;	
 	}
+    .site-footer .social-link .contact-us {
+		font-size: 18px;
+	    line-height: 18px;
+	}
 	.page-banner .intro-title {
 		font-size: 80px;
 		line-height: 80px;
@@ -2037,17 +2052,17 @@ content: "";
 	}
 	.dlab-bnr-inr.no-bg-bnr {
 		padding: 30px 0 30px;
-		background: #f4f4f4;	
 	}
 	.dlab-bnr-inr.no-bg-bnr p{
 		margin-bottom:0;
 	}
 	.dlab-bnr-inr.no-bg-bnr .dlab-bnr-inr-entry p {
 		font-size: 16px;
-		line-height: 28px;
+		line-height: 23px;
+        margin-bottom: 20px;
 	}
 	.site-header .main-bar {
-        padding: 150px 0;
+        padding: 10px 0;
 
     }
 	.services-box {

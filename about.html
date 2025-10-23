@@ -36,6 +36,7 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/my-style.css">
     <link rel="stylesheet" type="text/css" href="css/templete.css">
     <link class="skin" rel="stylesheet" type="text/css" href="css/skin/skin-1.css">
 </head>
@@ -49,13 +50,18 @@
         <div class="main-bar-wraper navbar-expand-lg">
             <div class="main-bar clearfix bg-white">
                 <div class="container clearfix">
+                    <!-- website logo -->
+                    <a href="index.html" class="logo-container">
+                        <img src="images/logo-text-black.png" alt="logo-icon" class="logo-img">
+                    </a>
+
                     <!-- main nav -->
                     <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
                         <ul class="nav navbar-nav">
                             <li class="active">
                                 <a href="index.html">Home </a>
                             </li>
-                            <li><a href="about.html">Services</a>
+                            <li><a href="services.html">Services</a>
                             <li><a href="about.html">About</a></li>
                             <li><a href="contact.html">Contacts</a></li>
                         </ul>
@@ -66,7 +72,7 @@
                         <div class="extra-cell">
                             <div class="video-wraper">
                                 <div class="video-play">
-                                    <a href="https://www.youtube.com/watch?v=UMX6eWoMXAM" class="popup-youtube video">
+                                    <a href="contact.html" class="popup-youtube video">
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -76,11 +82,22 @@
                                                 <path d="m21.854 2.147-10.94 10.939"/>
                                             </svg>
                                         </div>
-                                        <span>INQUIRE NOW!</span></a>
+                                        <span class="d-none d-md-block">INQUIRE NOW!</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Mobile navbar toggler button -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -260,7 +277,7 @@
                              data-wow-duration="3s">
                             <div class="section-head m-sm-b0">
                                 <h2 class="title">Want to join our team?</h2>
-                                <a href="#" class="btn-link text-black">CONTACT US</a>
+                                <a href="contact.html" class="btn-link text-black">CONTACT US</a>
                             </div>
                         </div>
                     </div>
@@ -436,7 +453,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <ul class="social-link">
+                        <ul class="social-link align-content-center">
                             <li><a href="javascript:void(0);"><span>FACEBOOK</span> <i class="fa fa-facebook"></i></a>
                             </li>
                             <li><a href="javascript:void(0);"><span>INSTAGRAM</span> <i class="fa fa-instagram"></i></a>
@@ -445,8 +462,11 @@
                             </li>
                             <li><a href="javascript:void(0);"><span>TWITTER</span> <i class="fa fa-twitter"></i></a>
                             </li>
-                            <li class="ml-auto"><a href="javascript:void(0);"><img src="images/icon/star.png" alt=""
-                                                                                   width="20"/> <span>CONTACT US</span></a>
+                            <li class="ml-auto">
+                                <a href="javascript:void(0);" class="d-flex">
+                                    <img src="images/icon/star.png" alt="" width="20"/>
+                                    <span class="contact-us">CONTACT US</span>
+                                </a>
                             </li>
                         </ul>
                     </div>

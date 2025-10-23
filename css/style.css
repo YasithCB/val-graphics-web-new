@@ -200,9 +200,9 @@ h1,h2,h3,h4,p,span,a, button {
 
 
 a {
-    color: #EFBB20;
+    color: white !important;
     outline: 0 none;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 a:hover,
@@ -3724,6 +3724,7 @@ blockquote:before {
 ---------------------------------------------------------------*/
 
 .site-header {
+    height: auto !important;
     position: relative;
     z-index: 99999;
 }
@@ -13757,20 +13758,20 @@ footer.text-white p a {
 
 /* scroll top btn css */
 button.scroltop {
-    background: var(--color-primary);
+    background: white;
     border-color: #efbb20;
     border-radius: 4px;
     border-style: solid;
     border-width: 0;
     bottom: 15px;
-    color: #fff !important;
+    color: #000 !important;
     cursor: pointer;
     display: none;
     height: 50px;
     line-height: 50px;
     margin: 0;
     position: fixed;
-    right: 15px;
+    left: 20px;
     text-align: center;
     width: 50px;
     z-index: 999;
@@ -16339,7 +16340,7 @@ ol.commentlist li .star-rating {
 /* Google Recaptcha */
 @media screen and (max-width: 991px) {
     .mo-left .header-nav.nav-dark {
-        background-color: #202020;
+        background-color: #ffffffd1;
     }
 
     .mo-left .header-nav {

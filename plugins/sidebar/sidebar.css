@@ -234,6 +234,7 @@ a[aria-expanded="true"]::before {
 		padding-right: 15px;
 	}
 }
+
 @media only screen and (max-width: 991px) {
 	.leftbar .header-nav{
 		margin:0 0;
