@@ -15787,8 +15787,7 @@ ol.commentlist li .star-rating {
 
 .row.spno [class*="col-"],
 .spno [class*="col-"] {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 4px;
 }
 
 /* Mobile Spacing */
