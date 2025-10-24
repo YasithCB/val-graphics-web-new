@@ -344,27 +344,31 @@
 	transform-origin: right;
 }
 .discover-btn{
+    display: flex;
+    gap: 8px;
+    position: fixed;
+    z-index: 999;
 	background-color:#000;
 	color: #fff!important;
 	transform-origin: 0 0;
 	left: 0;
-    bottom: 0px;
-    writing-mode: vertical-lr;
+    bottom: 40px;
+    writing-mode: vertical-rl;
 }
 
 /* ==== Split Slide (Desktop) ==== */
 .split-box {
-    height: 90vh;
+    height: 100vh;
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 100px;
+    margin-bottom: 300px !important;
     position: sticky;
     top: 0;
 }
 /* ==== Mobile Adjustments ==== */
 @media (max-width: 768px) {
     .split-box {
-        margin-bottom: 40px;  /* Reduce spacing */
+        margin-bottom: 5px !important;  /* Reduce spacing */
         top: auto;
     }
 }
@@ -1920,8 +1924,9 @@ content: "";
 		display: none;
 	}
 	.split-box-area .split-item .title {
-        font-size: 20px;
-        line-height: 29px;
+        font-size: 15px;
+        line-height: 21px;
+        text-align: center;
         margin-bottom: 0;
     }
 	.fixed-body{
