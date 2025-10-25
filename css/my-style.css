@@ -163,3 +163,88 @@
     }
 }
 /* whatsapp button fixed */
+
+
+/* departments section - emails */
+.email-section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.email-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.email-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.email-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.email-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.email-list li i {
+    font-size: 1.5rem;
+    color: #e41e26;
+    width: 30px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.email-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.dept-title {
+    font-weight: 600;
+    color: white;
+    font-size: 1rem;
+}
+
+.email-info a {
+    text-decoration: none;
+    color: #acacac !important;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.email-info a:hover {
+    color: #e41e26 !important;
+}
+
+/* optional - match your existing hover-red-title style */
+.hover-red-title {
+    margin: 0 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.hover-red-title:hover {
+    color: #e41e26;
+}
+/* departments section - emails */
