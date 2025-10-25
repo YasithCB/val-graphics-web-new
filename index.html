@@ -19,6 +19,9 @@
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,6 +130,59 @@
                             <!--                            <h2 class="intro-title">BUILD</h2>-->
                             <!--                            <h2 class="intro-title">YOUR</h2>-->
                             <!--                            <h2 class="intro-title text-red-blended">DREAM</h2>-->
+
+                            <!-- Get Quotation Button -->
+                            <button class="quotation-btn" id="openQuotationModal">
+                                <i class="fa-solid fa-file-signature"></i> Get Quotation Now
+                            </button>
+                            <!-- Quotation Modal -->
+                            <div class="modal" id="quotationModal">
+                                <div class="modal-content">
+                                    <span class="close-modal">&times;</span>
+                                    <h2>Request a Quotation</h2>
+                                    <form id="quotationForm">
+                                        <div class="form-group">
+                                            <label>Category *</label>
+                                            <select id="category" required>
+                                                <option value="">Select Category</option>
+                                                <option value="car_wrapping">Car Wrapping Services</option>
+                                                <option value="car_tint">Car Tint & Protection</option>
+                                                <option value="fitouts">Interior Fitouts</option>
+                                                <option value="printing">Digital Printing</option>
+                                                <option value="signage">Billboard & Signage</option>
+                                                <option value="digital_solutions">Digital Solutions</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Subcategory *</label>
+                                            <select id="subcategory" required>
+                                                <option value="">Select Subcategory</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Name *</label>
+                                            <input type="text" id="name" placeholder="Enter your name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Phone *</label>
+                                            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email *</label>
+                                            <input type="email" id="email" placeholder="Enter your email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Message *</label>
+                                            <textarea id="message" placeholder="Describe your request..." required></textarea>
+                                        </div>
+
+                                        <button type="submit" class="submit-btn">Submit Request</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Get Quotation Button -->
                         </div>
 
                         <div class="col-xl-1"></div>
@@ -650,6 +706,84 @@
 <script src="js/dz.carousel.js"></script><!-- SORTCODE FUCTIONS  -->
 <script src="js/dz.ajax.js"></script><!-- CONTACT JS  -->
 <script src="plugins/skrollr/skrollr.js"></script><!-- OWL SLIDER -->
+
+
+<!-- get quotation btn - model -->
+<script>
+    const modal = document.getElementById("quotationModal");
+    const openBtn = document.getElementById("openQuotationModal");
+    const closeBtn = document.querySelector(".close-modal");
+
+    openBtn.onclick = () => (modal.style.display = "flex");
+    closeBtn.onclick = () => (modal.style.display = "none");
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+</script>
+<!-- get quotation btn - model -->
+
+
+<!-- emailJS - get quotation submit-->
+<!-- Include EmailJS SDK -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    // 1️⃣ Initialize EmailJS
+    emailjs.init({
+        publicKey: "4HHUSxDPc15XRTFxX", // replace with your EmailJS User ID
+        blockHeadless: true,
+        limitRate: { id: "app", throttle: 10000 } // optional rate limit
+    });
+
+    // 3️⃣ Handle form submission
+    const form = document.getElementById("quotationForm");
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const templateParams = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            message: document.getElementById("message").value,
+            category: categorySelect.options[categorySelect.selectedIndex].text,
+            subcategory: subcategorySelect.options[subcategorySelect.selectedIndex].text,
+            time: new Date().toLocaleString()
+        };
+
+        // Send email via EmailJS
+        emailjs.send("service_yb8g7yw", "template_kz6qtkl", templateParams)
+            .then(response => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Quotation Sent!',
+                    text: 'Your quotation request has been submitted successfully. We will contact you soon.',
+                    confirmButtonColor: '#e74c3c', // your brand color
+                    confirmButtonText: 'Ok'
+                }).then(() => {
+                    form.reset();
+                    const modal = document.getElementById("quotationModal");
+                    if(modal) modal.style.display = "none";
+                });
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops!',
+                    text: 'Something went wrong. Please try again later.',
+                    confirmButtonColor: '#e74c3c',
+                    confirmButtonText: 'Ok'
+                });
+                console.error("EmailJS error:", error);
+            });
+
+    });
+</script>
+<!-- emailJS - get quotation submit-->
+
+<!-- custom -->
+<script src="js/quotation-model.js"></script>
+
 <script>
     // disable skrollr if the window is resized below 960px wide
     jQuery(window).on('load resize', function () {
