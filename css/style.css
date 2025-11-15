@@ -2227,7 +2227,7 @@ dl dd {
 }
 
 .text-red {
-    color: #e40006;
+    color: var(--color-secondry);
 }
 
 .text-yellow {
@@ -4335,7 +4335,13 @@ blockquote:before {
 .header-nav .nav > li.active > a:after {
     content: "";
     height: 5px;
-    background: red;
+    background: linear-gradient(
+            135deg,
+            #860820,
+            #960E26
+    );
+
+
     width: calc(100% + 2px);
     position: absolute;
     bottom: 0;

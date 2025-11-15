@@ -1,4 +1,6 @@
 
+
+
 /* whatsapp button ------------------------------------------------------------------- */
 .whatsapp-btn {
      position: fixed;
@@ -267,7 +269,7 @@
 /* --- Full width button --- */
 .quotation-btn {
     width: 100%;
-    background: linear-gradient(90deg, #e10000, #800000);
+    background: linear-gradient(90deg, var(--color-gradient-1), var(--color-gradient-2));
     color: #fff;
     border: none;
     padding: 14px 0;

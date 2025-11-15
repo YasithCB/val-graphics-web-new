@@ -19,6 +19,9 @@
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,7 +140,6 @@
                                 </div>
                                 <h4 class="title font-weight-700">ABU DHABI | UAE</h4>
                                 <p>Address #Airport Road <br/>Abu Dhabi, UAE</p>
-                                <a href="#" class="btn-link text-black"><i class="la la-map-marker"></i> VIEW ON MAP</a>
                             </div>
                         </div>
 
@@ -162,12 +164,26 @@
                                                   required></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-link link-line text-black">
-                                        Send Message
+                                        Inquire Now
                                         <i class="fa fa-long-arrow-right"></i>
                                     </button>
                                 </form>
                             </div>
                         </div>
+
+                        <!-- Map View -->
+                        <div style="width: 100%; max-width: 100%; height: 450px; overflow: hidden; border-radius: 12px;">
+                            <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.5151604443545!2d54.36895338623564!3d24.46760120463893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e66237e20bb83%3A0x8b054a249342fafe!2sMedia%20Store!5e0!3m2!1sen!2sae!4v1761407252938!5m2!1sen!2sae"
+                                    width="100%"
+                                    height="100%"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <!-- Map View -->
                     </div>
 
                 </div>
@@ -254,32 +270,62 @@
 <!--End of Tawk.to Script-->
 <!-- live chat - tawk.to -->
 
+<!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
 <script>
-    // Contact form submission
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent default form submission
+    // 1️⃣ Initialize EmailJS
+    emailjs.init("4HHUSxDPc15XRTFxX"); // Replace with your EmailJS Public Key
 
-        // Get form values
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const subject = document.getElementById("subject").value.trim();
-        const message = document.getElementById("message").value.trim();
+    // 2️⃣ Contact form handler
+    const contactForm = document.getElementById("contactForm");
 
-        // Simple validation
-        if (!name || !email || !subject || !message) {
-            alert("Please fill all the fields.");
-            return;
-        }
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-        // Here you can add your backend submission logic (AJAX / fetch)
+        // Gather form data
+        const templateParams = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value,
+            time: new Date().toLocaleString()
+        };
 
-        // For now, show success message
-        alert("Thank you, " + name + "! Your message has been sent successfully.");
-
-        // Reset form
-        document.getElementById("contactForm").reset();
+        // Send email
+        emailjs.send("service_yb8g7yw", "template_514j5va", templateParams)
+            .then(response => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent!',
+                    text: 'Your inquiry has been submitted successfully. We will get back to you soon.',
+                    confirmButtonColor: '#202020',
+                    confirmButtonText: 'Ok'
+                }).then(() => {
+                    contactForm.reset(); // reset form after success
+                });
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops!',
+                    text: 'Something went wrong. Please try again later.',
+                    confirmButtonColor: '#ba1400',
+                    confirmButtonText: 'Ok'
+                });
+                console.error("EmailJS error:", error);
+            });
     });
 </script>
+
 
 <script src="js/jquery.min.js"></script><!-- JQUERY.MIN JS -->
 <script src="plugins/wow/wow.js"></script><!-- WOW JS -->

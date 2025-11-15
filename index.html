@@ -126,7 +126,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-12">
-                            <img src="images/text/build-your-dream.png" class="pe-3 d-none d-lg-block" alt="build-your-dream">
+                            <img src="images/text/main-title.png" class="pe-3 d-none d-lg-block" alt="build-your-dream">
                             <!--                            <h2 class="intro-title">BUILD</h2>-->
                             <!--                            <h2 class="intro-title">YOUR</h2>-->
                             <!--                            <h2 class="intro-title text-red-blended">DREAM</h2>-->
@@ -756,9 +756,9 @@
             .then(response => {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Quotation Sent!',
+                    title: 'Quotation Request Sent!',
                     text: 'Your quotation request has been submitted successfully. We will contact you soon.',
-                    confirmButtonColor: '#e74c3c', // your brand color
+                    confirmButtonColor: '#202020', // your brand color
                     confirmButtonText: 'Ok'
                 }).then(() => {
                     form.reset();
@@ -771,7 +771,7 @@
                     icon: 'error',
                     title: 'Oops!',
                     text: 'Something went wrong. Please try again later.',
-                    confirmButtonColor: '#e74c3c',
+                    confirmButtonColor: '#ba1400',
                     confirmButtonText: 'Ok'
                 });
                 console.error("EmailJS error:", error);
