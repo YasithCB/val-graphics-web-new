@@ -131,14 +131,62 @@
                             <!--                            <h2 class="intro-title">YOUR</h2>-->
                             <!--                            <h2 class="intro-title text-red-blended">DREAM</h2>-->
 
+                            <!-- Book Now Button - WEB -->
+                            <button class="btn-white mt-4 mt-md-3" id="openBookNowModal">
+                                <i class="fa-solid fa-house-user"></i>
+                                Home Service - Book Now
+                            </button>
+                            <!-- Book Now Button - WEB -->
                             <!-- Get Quotation Button - WEB -->
                             <button class="quotation-btn mt-4 mt-md-3" id="openQuotationModal">
                                 <i class="fa-solid fa-file-signature"></i> Get Quotation Now
                             </button>
-                            <!-- Quotation Modal -->
+                            <!-- Get Quotation Button - WEB -->
+
+                            <!-- QUOTATION MODAL -->
+                            <div class="modal" id="bookNowModal">
+                                <div class="modal-content">
+                                    <h2>Book Home Service</h2>
+                                    <form id="homeServiceForm">
+                                        <div class="form-group">
+                                            <label>Service *</label>
+                                            <input type="text" id="service" placeholder="Enter service you need" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Name *</label>
+                                            <input type="text" id="name" placeholder="Enter your name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Mobile *</label>
+                                            <input type="tel" id="mobile" placeholder="Enter your mobile number" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email *</label>
+                                            <input type="email" id="email" placeholder="Enter your email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Location *</label>
+                                            <input type="text" id="location" placeholder="Enter your location" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Date *</label>
+                                            <input type="date" id="date" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Time *</label>
+                                            <input type="time" id="time" required>
+                                        </div>
+
+                                        <button type="submit" class="submit-btn">Book Now</button>
+                                    </form>
+                                    <p class="confirmation-msg text-center mt-2">Thank you! We will call you shortly to confirm your booking.</p>
+                                </div>
+                            </div>
+                            <!-- QUOTATION MODAL -->
+
+                            <!-- BOOK NOW MODAL -->
                             <div class="modal" id="quotationModal">
                                 <div class="modal-content">
-                                    <span class="close-modal">&times;</span>
                                     <h2>Request a Quotation</h2>
                                     <form id="quotationForm">
                                         <div class="form-group">
@@ -163,26 +211,26 @@
 
                                         <div class="form-group">
                                             <label>Name *</label>
-                                            <input type="text" id="name" placeholder="Enter your name" required>
+                                            <input type="text" id="nameBookNow" placeholder="Enter your name" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Phone *</label>
-                                            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                                            <input type="tel" id="phoneBookNow" placeholder="Enter your phone number" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Email *</label>
-                                            <input type="email" id="email" placeholder="Enter your email" required>
+                                            <input type="email" id="emailBookNow" placeholder="Enter your email" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Message *</label>
-                                            <textarea id="message" placeholder="Describe your request..." required></textarea>
+                                            <textarea id="messageBookNow" placeholder="Describe your request..." required></textarea>
                                         </div>
 
                                         <button type="submit" class="submit-btn">Submit Request</button>
                                     </form>
                                 </div>
                             </div>
-                            <!-- Get Quotation Button - WEB -->
+                            <!-- BOOK NOW MODAL -->
                         </div>
 
                         <div class="col-xl-1"></div>
@@ -708,17 +756,32 @@
 <script src="plugins/skrollr/skrollr.js"></script><!-- OWL SLIDER -->
 
 
-<!-- get quotation btn - model -->
+<!-- QUOTATION MODAL SCRIPT -->
 <script>
-    const modal = document.getElementById("quotationModal");
-    const openBtn = document.getElementById("openQuotationModal");
-    const closeBtn = document.querySelector(".close-modal");
+    // Quotation modal
+    const quotationModal = document.getElementById("quotationModal");
+    const openQuotationBtn = document.getElementById("openQuotationModal");
 
-    openBtn.onclick = () => (modal.style.display = "flex");
-    closeBtn.onclick = () => (modal.style.display = "none");
-    window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+    openQuotationBtn.onclick = () => (quotationModal.style.display = "flex");
+
+    window.addEventListener("click", (e) => {
+        if (e.target === quotationModal) quotationModal.style.display = "none";
+    });
 </script>
-<!-- get quotation btn - model -->
+
+<!-- BOOK NOW MODAL SCRIPT -->
+<script>
+    // Book Now modal
+    const bookNowModal = document.getElementById("bookNowModal");
+    const openBookNowBtn = document.getElementById("openBookNowModal");
+
+    openBookNowBtn.onclick = () => (bookNowModal.style.display = "flex");
+
+    window.addEventListener("click", (e) => {
+        if (e.target === bookNowModal) bookNowModal.style.display = "none";
+    });
+</script>
+
 
 
 <!-- emailJS - get quotation submit-->
@@ -728,6 +791,8 @@
 </script>
 <!-- SweetAlert2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- emailJS - get quotation submit-->
 <script>
     // 1️⃣ Initialize EmailJS
     emailjs.init({
@@ -780,6 +845,58 @@
     });
 </script>
 <!-- emailJS - get quotation submit-->
+
+<!-- emailJS - home service submit -->
+<script>
+    // 1️⃣ Initialize EmailJS
+    emailjs.init("4HHUSxDPc15XRTFxX"); // replace with your EmailJS User ID
+
+    // 2️⃣ Handle form submission
+    const form = document.getElementById("homeServiceForm");
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // Collect form values
+        const templateParams = {
+            service: document.getElementById("service").value,
+            name: document.getElementById("name").value,
+            mobile: document.getElementById("mobile").value,
+            email: document.getElementById("email").value,
+            location: document.getElementById("location").value,
+            date: document.getElementById("date").value,
+            time: document.getElementById("time").value,
+            submittedAt: new Date().toLocaleString()
+        };
+
+        // Send email via EmailJS
+        emailjs.send("service_yb8g7yw", "template_kz6qtkl", templateParams)
+            .then(response => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Booking Request Sent!',
+                    text: 'Thank you! We will call you shortly to confirm your booking.',
+                    confirmButtonColor: '#202020',
+                    confirmButtonText: 'Ok'
+                }).then(() => {
+                    form.reset();
+                    const modal = document.getElementById("bookNowModal");
+                    if(modal) modal.style.display = "none";
+                });
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops!',
+                    text: 'Something went wrong. Please try again later.',
+                    confirmButtonColor: '#ba1400',
+                    confirmButtonText: 'Ok'
+                });
+                console.error("EmailJS error:", error);
+            });
+    });
+</script>
+<!-- emailJS - home service submit -->
+
 
 <!-- custom -->
 <script src="js/quotation-model.js"></script>

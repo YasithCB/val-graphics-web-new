@@ -3726,7 +3726,6 @@ blockquote:before {
 .site-header {
     height: auto !important;
     position: relative;
-    z-index: 99999;
 }
 
 .site-header ul,

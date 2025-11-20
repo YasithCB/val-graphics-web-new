@@ -284,6 +284,23 @@
     transform: translateY(-2px);
 }
 
+.btn-white {
+    width: 100%;
+    background: white;
+    color: var(--color-gradient-1);
+    border: none;
+    padding: 14px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-white:hover {
+    transform: translateY(-2px);
+}
+
 /* --- Modal Overlay --- */
 .modal {
     display: none;
@@ -293,6 +310,7 @@
     background: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
+    padding-top: 20vh
 }
 
 /* --- Modal Content Box --- */
@@ -357,7 +375,7 @@
 
 /* --- Submit button --- */
 .submit-btn {
-    background: #e10000;
+    background: linear-gradient(90deg, var(--color-gradient-1), var(--color-gradient-2));
     color: #fff;
     width: 100%;
     border: none;
@@ -366,9 +384,11 @@
     font-size: 1rem;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: filter 0.3s ease, transform 0.2s ease;
 }
 .submit-btn:hover {
-    background: #800000;
+    filter: brightness(0.9); /* slightly darkens button */
+    transform: scale(1.03); /* subtle zoom effect */
 }
+
 /* get quotation btn and model ------------------------------------------------------------------- */
